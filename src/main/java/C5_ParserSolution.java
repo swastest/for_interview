@@ -47,4 +47,27 @@ public class C5_ParserSolution {
         result.add(new AbstractMap.SimpleEntry<>(key.toString(), value.toString()));
         return result;
     }
+
+    private static List<Map.Entry<String, String>> parse(String dn) {
+    String[] tmpResults = dn.split("=");
+    List<String> results = new ArrayList<>();
+    results.add(results.get(0));
+    for (int i = 1; i < tmpResults.length-1; ++i) {
+        String value = tmpResults[i];
+        int lastComma = value.lastIndexOf(",");
+        String tmpValue = value.substring(0, lastComma);
+        String tmpKey = value.substring(lastComma + 1, value.length());
+        results.add(tmpValue);
+        results.add(tmpKey);
+    }
+    results.add(results.get(results.size()-1));
+    
+    List<Map.Entry<String, String>> values = new ArrayList<>();
+    for (int i = 0; i < results.size()/2; ++i) {
+        String key = results.get(2 * i);
+        String value = results.get(2 * i + 1);
+        values.add(Map.entry(key, value));
+    }
+    return values;
+}
 }
