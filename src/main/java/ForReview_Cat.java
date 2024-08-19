@@ -4,8 +4,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Logger;
 
-public final class Cat4 {
-    
+ /* public final class Cat4 {
+
     private static final int jumpsCount = 0;
 
     private final DataSource dataSource;
@@ -90,4 +90,4 @@ public final class Cat4 {
             return null;
         }
     }
-}
+}*/
